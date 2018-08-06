@@ -11,7 +11,17 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
+requirements = [
+    "keyring",
+
+    # Includes non-desktop support (keyrings.alt.file.EncryptedKeyring)
+    "keyrings.alt",
+
+    # pycrypto is needed for keyrings.alt.file.EncryptedKeyring, used
+    # by ~/bin/local-keychain-store when not in Linux/OS X desktop
+    # context that provides its own keyring
+    "pycrypto",
+]
 
 setup_requirements = [ ]
 
@@ -36,7 +46,9 @@ setup(
     description="CLI tools to manipulate local keychain",
     entry_points={
         'console_scripts': [
-            'local_keychain_utils=local_keychain_utils.cli:main',
+            'local-keychain-clear=local_keychain_utils.local_keychain_clear:main',
+            'local-keychain-get=local_keychain_utils.local_keychain_get:main',
+            'local-keychain-store=local_keychain_utils.local_keychain_store:main',
         ],
     },
     install_requires=requirements,
