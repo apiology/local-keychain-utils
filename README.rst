@@ -30,12 +30,6 @@ CLI tools to manipulate local keychain
 Features
 --------
 
-* TODO
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+* `local-keychain-store`: add a secret from the system keychain.
+* `local-keychain-get`: retrieve a secret from the system keychain.
+* `local-keychain-clear`: remove a secret from the system keychain.
