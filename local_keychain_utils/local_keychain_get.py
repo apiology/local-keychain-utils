@@ -3,7 +3,6 @@
 import keyring
 from keyring import core
 import argparse
-# import subprocess
 
 parser =\
     argparse.ArgumentParser(description='Retrieve a secret in local keychain')
