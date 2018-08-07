@@ -6,7 +6,6 @@
 from setuptools import setup, find_packages
 from distutils.cmd import Command
 import distutils
-import os
 import subprocess
 
 with open('README.rst') as readme_file:
@@ -27,16 +26,18 @@ requirements = [
     "pycrypto",
 ]
 
-setup_requirements = [ ]
+setup_requirements = []
 
-test_requirements = [ ]
+test_requirements = []
 
 
 class QualityCommand(Command):
     description = 'Run quality gem on source code'
     user_options = [
         # The format is (long option, short option, description).
-        ('quality-target=', None, 'particular quality tool to run (default: all)')
+        ('quality-target=',
+         None,
+         'particular quality tool to run (default: all)')
     ]
 
     def initialize_options(self):
@@ -77,9 +78,12 @@ setup(
     description="CLI tools to manipulate local keychain",
     entry_points={
         'console_scripts': [
-            'local-keychain-clear=local_keychain_utils.local_keychain_clear:main',
-            'local-keychain-get=local_keychain_utils.local_keychain_get:main',
-            'local-keychain-store=local_keychain_utils.local_keychain_store:main',
+            'local-keychain-clear='
+            'local_keychain_utils.local_keychain_clear:main',
+            'local-keychain-get='
+            'local_keychain_utils.local_keychain_get:main',
+            'local-keychain-store='
+            'local_keychain_utils.local_keychain_store:main',
         ],
     },
     install_requires=requirements,
