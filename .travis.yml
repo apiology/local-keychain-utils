@@ -24,16 +24,12 @@ script:
   - tox
   - if [ $RUN_QUALITY == true ]; then python3 setup.py quality; fi
 
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: apiology
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: "FSycOmgawVZEAgt4og0wx4JR8COq8yAUTV9Kx1o1C6oDTzuA4+Cfv6bqnyzwzdDX0Firiv8uP/9vW3+qhdGc0XSKQzPr82vib1JOOXYudgMQTed4QfGcyFK1CpQtGU7JTxYH1OHy7NC8jnag1wy7oPQ61WD9S+IlBUqFfFhbbq9BFqFaVPX7xPlrarSK+dYiPygIKP4lIIK6e0r2FVO4Rxiigpe5em81NkmT+BqUyV7WJUmx42uc2NY51+786c9ZcbjdCaxxL5ep/yMQpMhExeZ718Ko6Xrb6fzrDViWo/xcoukupGYm2osXda0jKjJpRu9RDlczY7gJO1Ihi4tL3j0Tnh7t5z2zHRRHYzXki598fSWGsP3T5yMx5WmVnQJh9Uye+mXxL0EWUFeTM3gKPig9EHQIo6ztCILNtrK26soL6zdzPOm8ULWARFp/lJZHtKAvCCwxzSXNnLB1V6PR5RGbu6YtrR1EFfaIaqh/oTnx0BuHzH1eFWqwPnhaKFkNHX/8gSKBKbr/yf1BLjRsU8SmCNUEnAlPYZ8gXdEY10OQX8w1eSIc0jZP1J3vHIHLeM5OYWpaSPT8n84yMpfAZYWDngavCKf3SGSZg5NcLhL6r10UMleTJymM3hbYHXgMA9YymuFmCSoF9p8MfpwURnvCPq+rXui14bMkBcgLc6I="
   on:
     tags: true
     repo: apiology/local_keychain_utils
