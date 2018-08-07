@@ -6,7 +6,7 @@
 
 import unittest
 
-from local_keychain_utils import local_keychain_utils
+# from local_keychain_utils import local_keychain_utils
 
 
 class TestLocal_keychain_utils(unittest.TestCase):

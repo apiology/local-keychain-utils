@@ -4,6 +4,9 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+from distutils.cmd import Command
+import distutils
+import subprocess
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -23,9 +26,38 @@ requirements = [
     "pycrypto",
 ]
 
-setup_requirements = [ ]
+setup_requirements = []
 
-test_requirements = [ ]
+test_requirements = []
+
+
+class QualityCommand(Command):
+    description = 'Run quality gem on source code'
+    user_options = [
+        # The format is (long option, short option, description).
+        ('quality-target=',
+         None,
+         'particular quality tool to run (default: all)')
+    ]
+
+    def initialize_options(self):
+        """Set default values for options."""
+        # Each user option must be listed here with their default value.
+        self.quality_target = None
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        """Run command."""
+        command = ['./quality.sh']
+        if self.quality_target:
+            command.append(self.quality_target)
+        self.announce(
+            'Running command: %s' % str(command),
+            level=distutils.log.INFO)
+        subprocess.check_call(command)
+
 
 setup(
     author="Vince Broz",
@@ -46,9 +78,12 @@ setup(
     description="CLI tools to manipulate local keychain",
     entry_points={
         'console_scripts': [
-            'local-keychain-clear=local_keychain_utils.local_keychain_clear:main',
-            'local-keychain-get=local_keychain_utils.local_keychain_get:main',
-            'local-keychain-store=local_keychain_utils.local_keychain_store:main',
+            'local-keychain-clear='
+            'local_keychain_utils.local_keychain_clear:main',
+            'local-keychain-get='
+            'local_keychain_utils.local_keychain_get:main',
+            'local-keychain-store='
+            'local_keychain_utils.local_keychain_store:main',
         ],
     },
     install_requires=requirements,
@@ -64,4 +99,7 @@ setup(
     url='https://github.com/apiology/local_keychain_utils',
     version='0.1.0',
     zip_safe=False,
+    cmdclass={
+        'quality': QualityCommand
+    }
 )
