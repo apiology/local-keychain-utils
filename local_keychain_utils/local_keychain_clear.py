@@ -14,10 +14,10 @@ parser.add_argument('service', type=str,
 parser.add_argument('username', type=str,
                     help='Username to use')
 
-args = parser.parse_args()
-service = args.service
-username = args.username
-backend = args.backend
+args: argparse.Namespace = parser.parse_args()
+service: str = args.service
+username: str = args.username
+backend: str = args.backend
 
 if backend is not None:
     keyring.set_keyring(core.load_keyring(backend))
