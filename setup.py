@@ -1,12 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """The setup script."""
 
 from setuptools import setup, find_packages
-from distutils.cmd import Command
 import distutils
+from distutils.cmd import Command
+import distutils.command.clean
+from distutils.dir_util import remove_tree
 import subprocess
+import os
+from typing import List, Tuple, Optional
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -26,12 +30,32 @@ requirements = [
     "pycrypto",
 ]
 
-setup_requirements = []
 
-test_requirements = []
+setup_requirements: List[str] = []
+
+test_requirements: List[str] = []
+
+
+class MypyCleanCommand(Command):
+    """Regular clean plus mypy cache"""
+
+    description = 'Run mypy on source code'
+    user_options: List[Tuple[str, Optional[str], str]] = []
+
+    def initialize_options(self) -> None:
+        pass
+
+    def finalize_options(self) -> None:
+        pass
+
+    def run(self) -> None:
+        if os.path.exists('.mypy_cache'):
+            remove_tree('.mypy_cache')
 
 
 class QualityCommand(Command):
+    quality_target: Optional[str]
+
     description = 'Run quality gem on source code'
     user_options = [
         # The format is (long option, short option, description).
@@ -40,22 +64,41 @@ class QualityCommand(Command):
          'particular quality tool to run (default: all)')
     ]
 
-    def initialize_options(self):
+    def initialize_options(self) -> None:
         """Set default values for options."""
         # Each user option must be listed here with their default value.
         self.quality_target = None
 
-    def finalize_options(self):
+    def finalize_options(self) -> None:
         pass
 
-    def run(self):
+    def run(self) -> None:
         """Run command."""
         command = ['./quality.sh']
         if self.quality_target:
             command.append(self.quality_target)
         self.announce(
             'Running command: %s' % str(command),
-            level=distutils.log.INFO)
+            level=distutils.log.INFO)  # type: ignore
+        subprocess.check_call(command)
+
+
+class MypyCommand(Command):
+    description = 'Run mypy on source code'
+    user_options: List[Tuple[str, Optional[str], str]] = []
+
+    def initialize_options(self) -> None:
+        pass
+
+    def finalize_options(self) -> None:
+        pass
+
+    def run(self) -> None:
+        """Run command."""
+        command = ['mypy', '--html-report', 'types/coverage', '.']
+        self.announce(
+            'Running command: %s' % str(command),
+            level=distutils.log.INFO)  # type: ignore
         subprocess.check_call(command)
 
 
@@ -100,6 +143,8 @@ setup(
     version='0.1.0',
     zip_safe=False,
     cmdclass={
-        'quality': QualityCommand
+        'quality': QualityCommand,
+        'typesclean': MypyCleanCommand,
+        'types': MypyCommand,
     }
 )

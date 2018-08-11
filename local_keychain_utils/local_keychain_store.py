@@ -4,11 +4,6 @@ import keyring
 from keyring import core
 import argparse
 import sys
-# Python 2 compat:
-try:
-    input = raw_input
-except NameError:
-    pass
 
 
 parser = \
@@ -22,12 +17,12 @@ parser.add_argument('username', type=str,
                     help='Username to use')
 
 args = parser.parse_args()
-service = args.service
-username = args.username
-backend = args.backend
+service: str = args.service
+username: str = args.username
+backend: str = args.backend
 
 if sys.stdin.isatty():
-    password = input('Password: ')
+    password: str = input('Password: ')
 else:
     password = input()
 
