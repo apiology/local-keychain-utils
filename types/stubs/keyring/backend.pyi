@@ -1,5 +1,2 @@
-import abc
-
-
 class KeyringBackend:
     ...
