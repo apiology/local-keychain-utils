@@ -3,14 +3,10 @@
 language: python
 matrix:
   include:
+    - python: 3.7
+      env: RUN_QUALITY=true
     - python: 3.6
       env: RUN_QUALITY=true
-    - python: 3.5
-      env: RUN_QUALITY=false
-    - python: 3.4
-      env: RUN_QUALITY=false
-    - python: 2.7
-      env: RUN_QUALITY=false
 
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox-travis
