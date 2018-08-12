@@ -19,7 +19,7 @@ services:
 
 # Command to run tests, e.g. python setup.py test
 script:
-  - "if [ ${NEEDS_QUALITY_IMAGE:?} == true ]; then docker pull apiology/quality:jumbo-latest &; fi"
+  - "if [ ${NEEDS_QUALITY_IMAGE:?} = true ]; then (docker pull apiology/quality:jumbo-latest &) ; fi"
   - tox
 
 deploy:
