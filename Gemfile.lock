@@ -102,6 +102,7 @@ GEM
       require_all (~> 2.0)
       ruby-progressbar
     rainbow (3.0.0)
+    rake (12.3.1)
     reek (5.0.2)
       codeclimate-engine-rb (~> 0.4.0)
       kwalify (~> 0.7.0)
@@ -147,6 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   quality
+  rake
 
 BUNDLED WITH
    1.16.2
