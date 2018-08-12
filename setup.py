@@ -146,5 +146,5 @@ setup(
         'typesclean': MypyCleanCommand,
         'types': MypyCommand,
     },
-    python_requires='>=3.6',
+    python_requires='!=2,>=3.6',
 )
