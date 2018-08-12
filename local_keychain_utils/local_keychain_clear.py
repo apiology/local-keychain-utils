@@ -4,21 +4,23 @@ import keyring
 from keyring import core
 import argparse
 
-parser =\
-    argparse.ArgumentParser(description='Remove a secret in local keychain')
 
-parser.add_argument('--backend', type=str, nargs='?',
-                    help='Keyring backend to use')
-parser.add_argument('service', type=str,
-                    help='service to log into (e.g., URL)')
-parser.add_argument('username', type=str,
-                    help='Username to use')
+def main() -> None:
+    desc = 'Remove a secret in local keychain'
+    parser = argparse.ArgumentParser(description=desc)
 
-args: argparse.Namespace = parser.parse_args()
-service: str = args.service
-username: str = args.username
-backend: str = args.backend
+    parser.add_argument('--backend', type=str, nargs='?',
+                        help='Keyring backend to use')
+    parser.add_argument('service', type=str,
+                        help='service to log into (e.g., URL)')
+    parser.add_argument('username', type=str,
+                        help='Username to use')
 
-if backend is not None:
-    keyring.set_keyring(core.load_keyring(backend))
-keyring.delete_password(service, username)
+    args: argparse.Namespace = parser.parse_args()
+    service: str = args.service
+    username: str = args.username
+    backend: str = args.backend
+
+    if backend is not None:
+        keyring.set_keyring(core.load_keyring(backend))
+    keyring.delete_password(service, username)
