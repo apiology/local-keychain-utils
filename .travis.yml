@@ -3,9 +3,10 @@
 language: python
 matrix:
   include:
-#     - python: 3.7 # not yet supported in Travis
-#      env: RUN_QUALITY=false
+    - python: 3.7
     - python: 3.6
+
+dist: xenial
 
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox-travis
