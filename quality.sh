@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/bin/bash -x
+
+type gem
+
+gem list quality
 
 if gem list quality -i >/dev/null 2>&1
 then
