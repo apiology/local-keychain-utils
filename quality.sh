@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if type quality
+if gem list quality -i >/dev/null 2>&1
 then
   if [ -f Rakefile.quality ]
   then
-    rake -f Rakefile.quality
+    rake -f Rakefile.quality quality
   else
-    rake
+    rake quality
   fi
 else
   if [ -f Rakefile.quality ]

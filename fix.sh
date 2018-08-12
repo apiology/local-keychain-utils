@@ -12,3 +12,4 @@ pyenv virtualenv ${python_version:?} "$(cut -d' ' -f1 < .python-version)" || tru
 pip install --upgrade pip
 pip install -r requirements_dev.txt
 pip install -e .
+bundle install
