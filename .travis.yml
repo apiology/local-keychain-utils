@@ -4,7 +4,9 @@ language: python
 matrix:
   include:
     - python: 3.7
+      env: NEEDS_QUALITY_IMAGE=false
     - python: 3.6
+      env: NEEDS_QUALITY_IMAGE=true
 
 dist: xenial
 
@@ -17,7 +19,7 @@ services:
 
 # Command to run tests, e.g. python setup.py test
 script:
-  # - "docker pull apiology/quality:jumbo-latest &"
+  - "if [ ${NEEDS_QUALITY_IMAGE:?} == true ]; then docker pull apiology/quality:jumbo-latest &; fi"
   - tox
 
 deploy:
