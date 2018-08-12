@@ -28,6 +28,9 @@ requirements = [
     # by ~/bin/local-keychain-store when not in Linux/OS X desktop
     # context that provides its own keyring
     "pycrypto",
+
+    # interacts with pop-up secure password prompters via pinentry
+    "pysectools",
 ]
 
 
