@@ -1,9 +1,11 @@
 #!/bin/bash -x
 
+bundle install
 type gem
 type bundle
 
 bundle exec gem list quality
+
 
 if bundle exec gem list quality -i >/dev/null 2>&1
 then
