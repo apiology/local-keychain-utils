@@ -6,8 +6,8 @@ import argparse
 
 
 def main() -> None:
-    parser =\
-        argparse.ArgumentParser(description='Remove a secret in local keychain')
+    desc = 'Remove a secret in local keychain'
+    parser = argparse.ArgumentParser(description=desc)
 
     parser.add_argument('--backend', type=str, nargs='?',
                         help='Keyring backend to use')
