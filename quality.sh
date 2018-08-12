@@ -1,10 +1,11 @@
 #!/bin/bash -x
 
 type gem
+type bundle
 
-gem list quality
+bundle exec gem list quality
 
-if gem list quality -i >/dev/null 2>&1
+if bundle exec gem list quality -i >/dev/null 2>&1
 then
   if [ -f Rakefile.quality ]
   then
