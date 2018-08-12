@@ -8,6 +8,6 @@ for ver in $older_python_versions $python_version
 do
   pyenv install -s ${ver:?}
 done
-pyenv virtualenv ${python_version:?} "$(cat .python-version)" || true
+pyenv virtualenv ${python_version:?} "$(cut -d' ' -f1 < .python-version)" || true
 pip install --upgrade pip
 pip install -r requirements_dev.txt
