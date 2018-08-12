@@ -10,8 +10,12 @@ matrix:
 
 dist: xenial
 
+before_install:
+  - "if [ ${NEEDS_QUALITY_IMAGE:?} = true ]; then (docker pull apiology/quality:jumbo-latest &) ; fi"
+
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
+install:
+  - pip install -U tox-travis
 
 sudo: required
 services:
@@ -19,7 +23,6 @@ services:
 
 # Command to run tests, e.g. python setup.py test
 script:
-  - "if [ ${NEEDS_QUALITY_IMAGE:?} = true ]; then (docker pull apiology/quality:jumbo-latest &) ; fi"
   - tox
 
 deploy:
