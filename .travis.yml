@@ -17,6 +17,7 @@ services:
 
 # Command to run tests, e.g. python setup.py test
 script:
+  - "docker pull apiology/quality:jumbo-latest &"
   - tox
 
 deploy:
