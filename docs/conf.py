@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 # local_keychain_utils documentation build configuration file, created by
 # sphinx-quickstart on Fri Jun  9 13:47:02 2017.
@@ -47,9 +46,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Local Keychain Utilities'
-copyright = u"2018, Vince Broz"
-author = u"Vince Broz"
+project = 'Local Keychain Utilities'
+copyright = "2020, Vince Broz"
+author = "Vince Broz"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -129,8 +128,8 @@ latex_elements = {
 # [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'local_keychain_utils.tex',
-     u'Local Keychain Utilities Documentation',
-     u'Vince Broz', 'manual'),
+     'Local Keychain Utilities Documentation',
+     'Vince Broz', 'manual'),
 ]
 
 
@@ -140,7 +139,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'local_keychain_utils',
-     u'Local Keychain Utilities Documentation',
+     'Local Keychain Utilities Documentation',
      [author], 1)
 ]
 
@@ -152,7 +151,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'local_keychain_utils',
-     u'Local Keychain Utilities Documentation',
+     'Local Keychain Utilities Documentation',
      author,
      'local_keychain_utils',
      'One line description of project.',
