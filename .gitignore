@@ -46,7 +46,6 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
-/types/coverage
 
 # Translations
 *.mo
@@ -85,6 +84,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+/.python-version
 
 # Spyder project settings
 .spyderproject
@@ -98,3 +98,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+/types/coverage
+
+# IDE settings
+.vscode/
