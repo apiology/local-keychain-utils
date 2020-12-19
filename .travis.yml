@@ -1,17 +1,20 @@
-# Config file for automatic testing at travis-ci.org
+# Config file for automatic testing at travis-ci.com
 
 language: python
 matrix:
   include:
+    - python: 3.9
+    - python: 3.8
     - python: 3.7
     - python: 3.6
 
 dist: xenial
 
+sudo: required
+
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox-travis
 
-sudo: required
 services:
   - docker
 
@@ -28,4 +31,4 @@ deploy:
   on:
     tags: true
     repo: apiology/local_keychain_utils
-    python: 3.6
+    python: 3.8
