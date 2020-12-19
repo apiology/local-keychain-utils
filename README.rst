@@ -7,7 +7,7 @@ Local Keychain Utilities
         :target: https://pypi.python.org/pypi/local_keychain_utils
 
 .. image:: https://img.shields.io/travis/apiology/local_keychain_utils.svg
-        :target: https://travis-ci.org/apiology/local_keychain_utils
+        :target: https://travis-ci.com/apiology/local_keychain_utils
 
 .. image:: https://readthedocs.org/projects/local-keychain-utils/badge/?version=latest
         :target: https://local-keychain-utils.readthedocs.io/en/latest/?badge=latest

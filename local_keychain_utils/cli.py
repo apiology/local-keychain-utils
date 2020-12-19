@@ -1,16 +1,17 @@
-# -*- coding: utf-8 -*-
-
 """Console script for local_keychain_utils."""
+import argparse
 import sys
-import click
 
 
-@click.command()
-def main(args=None):
+def main():
     """Console script for local_keychain_utils."""
-    click.echo("Replace this message by putting your code into "
-               "local_keychain_utils.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
+    parser = argparse.ArgumentParser()
+    parser.add_argument('_', nargs='*')
+    args = parser.parse_args()
+
+    print("Arguments: " + str(args._))
+    print("Replace this message by putting your code into "
+          "local_keychain_utils.cli.main")
     return 0
 
 
