@@ -56,6 +56,25 @@ class MypyCleanCommand(Command):
             remove_tree('.mypy_cache')
 
 
+class MypyCommand(Command):
+    description = 'Run mypy on source code'
+    user_options: List[Tuple[str, Optional[str], str]] = []
+
+    def initialize_options(self) -> None:
+        pass
+
+    def finalize_options(self) -> None:
+        pass
+
+    def run(self) -> None:
+        """Run command."""
+        command = ['mypy', '--html-report', 'types/coverage', '.']
+        self.announce(
+            'Running command: %s' % str(command),
+            level=distutils.log.INFO)  # type: ignore
+        subprocess.check_call(command)
+
+
 class QualityCommand(Command):
     quality_target: Optional[str]
 
@@ -86,28 +105,10 @@ class QualityCommand(Command):
         subprocess.check_call(command)
 
 
-class MypyCommand(Command):
-    description = 'Run mypy on source code'
-    user_options: List[Tuple[str, Optional[str], str]] = []
-
-    def initialize_options(self) -> None:
-        pass
-
-    def finalize_options(self) -> None:
-        pass
-
-    def run(self) -> None:
-        """Run command."""
-        command = ['mypy', '--html-report', 'types/coverage', '.']
-        self.announce(
-            'Running command: %s' % str(command),
-            level=distutils.log.INFO)  # type: ignore
-        subprocess.check_call(command)
-
-
 setup(
     author="Vince Broz",
     author_email='vince@broz.cc',
+    python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -116,6 +117,8 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
     description="CLI tools to manipulate local keychain",
     entry_points={
@@ -134,7 +137,7 @@ setup(
     include_package_data=True,
     keywords='local_keychain_utils',
     name='local_keychain_utils',
-    packages=find_packages(include=['local_keychain_utils']),
+    packages=find_packages(include=['local_keychain_utils', 'local_keychain_utils.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
@@ -146,5 +149,4 @@ setup(
         'typesclean': MypyCleanCommand,
         'types': MypyCommand,
     },
-    python_requires='!=2,>=3.6',
 )
