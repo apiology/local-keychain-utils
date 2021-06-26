@@ -20,8 +20,10 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
+from typing import Dict  # noqa: E402
 
-import local_keychain_utils  # noqa
+
+import local_keychain_utils  # noqa: E402
 
 # -- General configuration ---------------------------------------------
 
@@ -47,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Local Keychain Utilities'
-copyright = "2020, Vince Broz"
+copyright = "2020, 2021, Vince Broz"
 author = "Vince Broz"
 
 # The version info for the project you're documenting, acts as replacement
@@ -105,7 +107,7 @@ htmlhelp_basename = 'local_keychain_utilsdoc'
 
 # -- Options for LaTeX output ------------------------------------------
 
-latex_elements = {
+latex_elements: Dict[str, str] = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',
@@ -129,7 +131,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'local_keychain_utils.tex',
      'Local Keychain Utilities Documentation',
-     'Vince Broz', 'manual'),
+     "Vince Broz", 'manual'),
 ]
 
 
