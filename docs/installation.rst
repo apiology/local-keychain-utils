@@ -38,7 +38,7 @@ Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OJL https://github.com/apiology/local_keychain_utils/tarball/main
+    $ curl -OJL https://github.com/apiology/local_keychain_utils/tarball/main
 
 Once you have a copy of the source, you can install it with:
 
