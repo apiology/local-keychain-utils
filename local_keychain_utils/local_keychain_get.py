@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+from argparse import ArgumentParser, Namespace
+
 import keyring
 from keyring import core
-from argparse import ArgumentParser, Namespace
 
 
 def main():

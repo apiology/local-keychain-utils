@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+import argparse
+
 import keyring
 from keyring import core
-import argparse
 
 
 def main() -> None:

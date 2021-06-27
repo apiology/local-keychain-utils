@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-import keyring
-from keyring import core
 import argparse
 import sys
+
+import keyring
+from keyring import core
 
 
 def main():
