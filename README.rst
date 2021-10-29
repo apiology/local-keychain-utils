@@ -13,10 +13,7 @@ Local Keychain Utilities
         :target: https://local-keychain-utils.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-WARNING: This is not ready for use yet!
-
 CLI tools to manipulate local keychain
-
 
 * Free software: MIT license
 * Documentation: https://local-keychain-utils.readthedocs.io.
