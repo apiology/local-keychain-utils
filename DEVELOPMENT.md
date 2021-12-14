@@ -28,7 +28,7 @@ First, make sure version has been bumped:
 git checkout main
 git pull
 git stash
-last_released_version=v"$(python -c 'import local_keychain_utilities; print(local_keychain_utilities.__version__)')"
+last_released_version=v"$(python -c 'import local_keychain_utils; print(local_keychain_utils.__version__)')"
 git log ${last_released_version:?}..
 bumpversion # give it major, minor or patch
 git push

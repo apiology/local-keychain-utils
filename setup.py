@@ -115,7 +115,7 @@ setup(
     description="CLI tools to manipulate local keychain",  # noqa: E501
     entry_points={
         'console_scripts': [
-            'local_keychain_utils=local_keychain_utilities.cli:main',
+            'local_keychain_utils=local_keychain_utils.cli:main',
         ],
     },
     cmdclass={
@@ -129,8 +129,8 @@ setup(
     include_package_data=True,
     keywords='local_keychain_utils',
     name='local_keychain_utils',
-    packages=find_packages(include=['local_keychain_utilities',
-                                    'local_keychain_utilities.*']),
+    packages=find_packages(include=['local_keychain_utils',
+                                    'local_keychain_utils.*']),
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/apiology/local_keychain_utils',

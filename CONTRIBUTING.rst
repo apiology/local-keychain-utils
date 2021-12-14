@@ -79,7 +79,7 @@ Ready to contribute? Here's how to set up `local_keychain_utils` for local devel
 5. When you're done making changes, check that your changes pass flake8 and the
    tests, including testing other Python versions with tox::
 
-    $ flake8 local_keychain_utilities tests
+    $ flake8 local_keychain_utils tests
     $ make test
     $ tox
 
@@ -111,7 +111,7 @@ Tips
 
 To run a subset of tests::
 
-    $ pytest tests.test_local_keychain_utilities
+    $ pytest tests.test_local_keychain_utils
 
 Deploying
 ---------

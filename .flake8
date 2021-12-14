@@ -1,5 +1,5 @@
 [flake8]
 exclude = docs
 max_line_length = 100
-application-import-names = local_keychain_utilities,tests
+application-import-names = local_keychain_utils,tests
 import-order-style = google
