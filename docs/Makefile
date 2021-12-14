@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = local_keychain_utils
+SPHINXPROJ    = local-keychain-utils
 SOURCEDIR     = .
 BUILDDIR      = _build
 
