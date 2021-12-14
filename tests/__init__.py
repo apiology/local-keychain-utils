@@ -1,1 +1,1 @@
-"""Unit test package for local_keychain_utils."""
+"""Unit test package for local-keychain-utils."""
