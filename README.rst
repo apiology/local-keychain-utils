@@ -3,11 +3,11 @@ Local Keychain Utilities
 ========================
 
 
-.. image:: https://circleci.com/gh/apiology/local_keychain_utils.svg?style=svg
-    :target: https://circleci.com/gh/apiology/local_keychain_utils
+.. image:: https://circleci.com/gh/apiology/local-keychain-utils.svg?style=svg
+    :target: https://circleci.com/gh/apiology/local-keychain-utils
 
-.. image:: https://img.shields.io/pypi/v/local_keychain_utils.svg
-        :target: https://pypi.python.org/pypi/local_keychain_utils
+.. image:: https://img.shields.io/pypi/v/local-keychain-utils.svg
+        :target: https://pypi.python.org/pypi/local-keychain-utils
 
 .. image:: https://readthedocs.org/projects/local-keychain-utils/badge/?version=latest
         :target: https://local-keychain-utils.readthedocs.io/en/latest/?badge=latest

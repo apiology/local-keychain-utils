@@ -1,4 +1,4 @@
-"""Console script for local_keychain_utils."""
+"""Console script for local-keychain-utils."""
 import argparse
 import sys
 from typing import List
@@ -28,7 +28,7 @@ def process_args(args: argparse.Namespace) -> int:
 
 
 def main(argv: List[str] = sys.argv) -> int:
-    """Console script for local_keychain_utils."""
+    """Console script for local-keychain-utils."""
 
     args = parse_argv(argv)
 

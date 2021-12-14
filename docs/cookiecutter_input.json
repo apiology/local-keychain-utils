@@ -9,7 +9,7 @@
     "package_name": "local_keychain_utils",
     "project_name": "Local Keychain Utilities",
     "project_short_description": "CLI tools to manipulate local keychain",
-    "project_slug": "local_keychain_utils",
+    "project_slug": "local-keychain-utils",
     "pypi_username": "apiology",
     "type_of_github_repo": "private",
     "version": "0.1.0"

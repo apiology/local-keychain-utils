@@ -44,7 +44,7 @@ def test_process_args(print):
 
 # @pytest.mark.skip(reason="working on main help test first")
 def test_parse_argv_run_simple():
-    argv = ['local_keychain_utils', 'op1', '123']
+    argv = ['local-keychain-utils', 'op1', '123']
     args = parse_argv(argv)
     assert vars(args) == {'operation': 'op1', 'arg1': 123}
 
@@ -63,7 +63,7 @@ def test_cli_op1_help():
     env = {}
     env.update(os.environ)
     env.update(request_long_lines)
-    expected_help = """usage: local_keychain_utils op1 [-h] arg1
+    expected_help = """usage: local-keychain-utils op1 [-h] arg1
 
 Do some kind of operation
 
@@ -77,7 +77,7 @@ options:
         # 3.10 changed the wording a bit
         expected_help = expected_help.replace('options:', 'optional arguments:')
 
-    actual_help = subprocess.check_output(['local_keychain_utils', 'op1', '--help'],
+    actual_help = subprocess.check_output(['local-keychain-utils', 'op1', '--help'],
                                           env=env).decode('utf-8')
     assert actual_help == expected_help
 
@@ -87,10 +87,10 @@ def test_cli_no_command():
     env = {}
     env.update(os.environ)
     env.update(request_long_lines)
-    expected_help = """usage: local_keychain_utils [-h] {op1} ...
-local_keychain_utils: error: Please provide a command
+    expected_help = """usage: local-keychain-utils [-h] {op1} ...
+local-keychain-utils: error: Please provide a command
 """
-    result = subprocess.run(['local_keychain_utils'],
+    result = subprocess.run(['local-keychain-utils'],
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE,
                             env=env)
@@ -103,7 +103,7 @@ def test_cli_help():
     env = {}
     env.update(os.environ)
     env.update(request_long_lines)
-    expected_help = """usage: local_keychain_utils [-h] {op1} ...
+    expected_help = """usage: local-keychain-utils [-h] {op1} ...
 
 positional arguments:
   {op1}
@@ -116,6 +116,6 @@ options:
         # 3.10 changed the wording a bit
         expected_help = expected_help.replace('options:', 'optional arguments:')
 
-    actual_help = subprocess.check_output(['local_keychain_utils', '--help'],
+    actual_help = subprocess.check_output(['local-keychain-utils', '--help'],
                                           env=env).decode('utf-8')
     assert actual_help == expected_help

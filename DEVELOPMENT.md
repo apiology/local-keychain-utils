@@ -35,5 +35,5 @@ git push
 git push --tags
 make release
 git stash pop
-open https://pypi.org/project/local_keychain_utils
+open https://pypi.org/project/local-keychain-utils
 ```

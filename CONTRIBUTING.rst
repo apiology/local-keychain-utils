@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/apiology/local_keychain_utils/issues.
+Report bugs at https://github.com/apiology/local-keychain-utils/issues.
 
 If you are reporting a bug, please include:
 
@@ -45,7 +45,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/apiology/local_keychain_utils/issues.
+The best way to send feedback is to file an issue at https://github.com/apiology/local-keychain-utils/issues.
 
 If you are proposing a feature:
 
@@ -57,17 +57,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `local_keychain_utils` for local development.
+Ready to contribute? Here's how to set up `local-keychain-utils` for local development.
 
-1. Fork the `local_keychain_utils` repo on GitHub.
+1. Fork the `local-keychain-utils` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/local_keychain_utils.git
+    $ git clone git@github.com:your_name_here/local-keychain-utils.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv local_keychain_utils
-    $ cd local_keychain_utils/
+    $ mkvirtualenv local-keychain-utils
+    $ cd local-keychain-utils/
     $ python setup.py develop
 
 4. Create a branch for local development::
@@ -103,7 +103,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 3.6, 3.7, 3.8, 3.9, and 3.10. Check
-   https://app.circleci.com/pipelines/github/apiology/local_keychain_utils
+   https://app.circleci.com/pipelines/github/apiology/local-keychain-utils
    and make sure that the tests pass for all supported Python versions.
 
 Tips

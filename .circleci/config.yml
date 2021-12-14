@@ -94,7 +94,7 @@ jobs:
           steps:
             - run: echo "overcommit only runs on main branch"
   build:
-    working_directory: ~/local_keychain_utils
+    working_directory: ~/local-keychain-utils
     docker:
       - image: apiology/circleci-python:latest
     steps:
