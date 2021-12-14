@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-"""Tests for `local_keychain_utils` package."""
+"""Tests for `local_keychain_utilities` package."""
 
-# from local_keychain_utils import local_keychain_utils
+# from local_keychain_utilities import local_keychain_utilities
 import argparse
 import os
 import subprocess
@@ -11,7 +11,7 @@ from unittest.mock import call, patch
 
 import pytest
 
-from local_keychain_utils.cli import main, parse_argv, process_args
+from local_keychain_utilities.cli import main, parse_argv, process_args
 
 
 @pytest.fixture
@@ -39,7 +39,7 @@ def test_process_args(print):
     assert out == 0
     print.assert_has_calls([call("Arguments: Namespace(foo='<fake>')"),
                             call('Replace this message by putting '
-                                 'your code into local_keychain_utils.cli.process_args')])
+                                 'your code into local_keychain_utilities.cli.process_args')])
 
 
 # @pytest.mark.skip(reason="working on main help test first")
@@ -49,8 +49,8 @@ def test_parse_argv_run_simple():
     assert vars(args) == {'operation': 'op1', 'arg1': 123}
 
 
-@patch('local_keychain_utils.cli.parse_argv', autospec=parse_argv)
-@patch('local_keychain_utils.cli.process_args', autospec=process_args)
+@patch('local_keychain_utilities.cli.parse_argv', autospec=parse_argv)
+@patch('local_keychain_utilities.cli.process_args', autospec=process_args)
 def test_main(process_args, parse_argv):
     argv = object()
     args = parse_argv.return_value

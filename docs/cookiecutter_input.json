@@ -6,6 +6,7 @@
     "full_name": "Vince Broz",
     "github_username": "apiology",
     "open_source_license": "MIT license",
+    "package_name": "local_keychain_utilities",
     "project_name": "Local Keychain Utilities",
     "project_short_description": "CLI tools to manipulate local keychain",
     "project_slug": "local_keychain_utils",

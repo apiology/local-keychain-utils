@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=local_keychain_utils
+set SPHINXPROJ=local_keychain_utilities
 
 if "%1" == "" goto help
 
