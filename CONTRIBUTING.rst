@@ -42,14 +42,15 @@ coding it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Local Keychain Utilities could always use more documentation, whether as part of the
-official Local Keychain Utilities docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+Local Keychain Utilities could always use more documentation, whether as part of
+the official Local Keychain Utilities docs, in docstrings, or even on the web in blog posts, articles,
+and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/apiology/local-keychain-utils/issues.
+The best way to send feedback is to file an issue at
+https://github.com/apiology/local-keychain-utils/issues.
 
 If you are proposing a new feature:
 
