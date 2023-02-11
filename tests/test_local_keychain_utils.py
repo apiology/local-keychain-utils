@@ -11,6 +11,7 @@ from unittest.mock import call, patch
 
 import pytest
 
+import local_keychain_utils
 from local_keychain_utils.cli import main, parse_argv, process_args
 
 
@@ -24,10 +25,10 @@ def response():
     # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
 
 
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+def test_dunders(response):
+    assert local_keychain_utils.__author__ is not None
+    assert local_keychain_utils.__email__ is not None
+    assert local_keychain_utils.__version__ is not None
 
 
 @patch('builtins.print', autospec=print)
