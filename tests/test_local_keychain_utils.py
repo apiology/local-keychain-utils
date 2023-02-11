@@ -10,7 +10,7 @@ import sys
 import pytest
 
 import local_keychain_utils
-from local_keychain_utils.cli import main, parse_argv, process_args
+
 
 @pytest.fixture
 def response():
