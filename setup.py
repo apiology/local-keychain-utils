@@ -33,10 +33,10 @@ requirements = [
     # Includes non-desktop support (keyrings.alt.file.EncryptedKeyring)
     "keyrings.alt",
 
-    # pycrypto is needed for keyrings.alt.file.EncryptedKeyring, used
+    # PyCryptodomex is needed for keyrings.alt.file.EncryptedKeyring, used
     # by ~/bin/local-keychain-store when not in Linux/OS X desktop
     # context that provides its own keyring
-    "pycrypto",
+    "PyCryptodomex",
 
     # interacts with pop-up secure password prompters via pinentry
     "pysectools",
@@ -111,6 +111,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     description="CLI tools to manipulate local keychain",  # noqa: E501
     entry_points={
